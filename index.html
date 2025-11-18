@@ -119,19 +119,19 @@
         
         <!-- Card 2: Carousel -->
         <div class="bg-white rounded-2xl card-shadow p-8">
-            <!-- Navegación del carousel -->
+            <!-- Navegación del carousel - MODIFICADO PARA PANTALLAS PEQUEÑAS -->
             <div class="flex justify-center mb-6">
-                <div class="inline-flex rounded-md shadow-sm" role="group">
-                    <button type="button" class="carousel-btn active px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-l-lg hover:bg-blue-700 focus:z-10 transition-colors" data-target="about">
+                <div class="flex flex-wrap justify-center gap-2" role="group">
+                    <button type="button" class="carousel-btn active px-3 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors w-full sm:w-auto sm:rounded-l-lg" data-target="about">
                         Sobre Mí
                     </button>
-                    <button type="button" class="carousel-btn px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 focus:z-10 transition-colors" data-target="skills">
+                    <button type="button" class="carousel-btn px-3 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 transition-colors w-full sm:w-auto" data-target="skills">
                         Habilidades
                     </button>
-                    <button type="button" class="carousel-btn px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 focus:z-10 transition-colors" data-target="experience">
+                    <button type="button" class="carousel-btn px-3 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 transition-colors w-full sm:w-auto" data-target="experience">
                         Experiencia
                     </button>
-                    <button type="button" class="carousel-btn px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-r-md hover:bg-gray-100 focus:z-10 transition-colors" data-target="education">
+                    <button type="button" class="carousel-btn px-3 py-2 text-sm font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 transition-colors w-full sm:w-auto sm:rounded-r-lg" data-target="education">
                         Educación
                     </button>
                 </div>
