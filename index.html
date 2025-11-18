@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi CV | Jesús Pastrán</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-blue': {
+                            '50': '#eff6ff',
+                            '100': '#dbeafe',
+                            '200': '#bfdbfe',
+                            '300': '#93c5fd',
+                            '400': '#60a5fa',
+                            '500': '#3b82f6',
+                            '600': '#2563eb',
+                            '700': '#1d4ed8',
+                            '800': '#1e40af',
+                            '900': '#1e3a8a',
+                        }
+                    },
+                    animation: {
+                        'gradient': 'gradient 15s ease infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-position': '0% 50%'
+                            },
+                            '50%': {
+                                'background-position': '100% 50%'
+                            },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .animated-gradient {
+            background: linear-gradient(-45deg, #0c193b, #19429c, #2a61b9, #4894f0, #77b2f5);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .carousel-item {
+            display: none;
+        }
+        
+        .carousel-item.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body class="animated-gradient min-h-screen py-8 px-4">
+    
+    <div class="max-w-4xl mx-auto relative z-10">
+        <!-- Card 1: Información Personal -->
+        <div class="bg-white rounded-2xl card-shadow p-8 mb-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Información personal -->
+                <div class="md:w-2/3 mb-6 md:mb-0 md:pr-8">
+                    <h1 class="text-3xl font-bold text-gray-800 ">Jesús Pastrán</h1>
+                    <h4 class="text-md font-bold text-gray-400 mb-4">T.S.U Informática</h4>
+                    <p class="text-gray-600 mb-1"><i class="fas fa-phone-alt mr-2 text-blue-500"></i>+58 424 516-1945</p>
+                    <p class="text-gray-600 mb-1"><i class="fas fa-envelope mr-2 text-blue-500"></i>peistren1507@gmail.com</p>
+                    <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>Barquisimeto, Lara. Venezuela</p>
+                    
+                    <!-- Redes Sociales -->
+                      <h4 class="text-md font-bold text-gray-600 mb-2">Un poco de mí en mis redes:</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/pastran.dev/" class="text-gray-700 hover:text-blue-500 transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/jesus.pastran.921?locale=es_LA" class="text-gray-700 hover:text-blue-500 transition-colors">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+                
+                <!-- Imagen -->
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-100">
+                        <img src="imgcv2.jpg" 
+                             alt="Foto de perfil" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 2: Carousel -->
+        <div class="bg-white rounded-2xl card-shadow p-8">
+            <!-- Navegación del carousel -->
+            <div class="flex justify-center mb-6">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="carousel-btn active px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-l-lg hover:bg-blue-700 focus:z-10 transition-colors" data-target="about">
+                        Sobre Mí
+                    </button>
+                    <button type="button" class="carousel-btn px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 focus:z-10 transition-colors" data-target="skills">
+                        Habilidades
+                    </button>
+                    <button type="button" class="carousel-btn px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 focus:z-10 transition-colors" data-target="experience">
+                        Experiencia
+                    </button>
+                    <button type="button" class="carousel-btn px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-r-md hover:bg-gray-100 focus:z-10 transition-colors" data-target="education">
+                        Educación
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Contenido del carousel -->
+            <div class="carousel-content">
+                <!-- Sobre Mí -->
+                <div id="about" class="carousel-item active">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Sobre Mí</h2>
+                    <p class="text-gray-600 mb-4">
+                        Soy T.S.U en Informática interesado por la tecnología y la programación, siempre destacando mi caracter autodidacta para aprender nuevas cosas y herramientas que me ayuden a mejorar siempre mi experticia.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Me apasiona crear soluciones eficientes y escalables que resuelvan problemas reales. Disfruto trabajando en equipo y aportar un pequeño grano de arena con nuevas ideas que no solo me ayuden sino que sea un apoyo mutuo tambíen para los demás. Disfruto aprender no solo por mi cuenta, sino también compartir mis conocimientos con otros y viceversa.
+                    </p>
+                    <p class="text-gray-600">
+                        Cuando no estoy programando, me ecanta pasar tiempo con amigos y familiares, igualmente, realizar ejercicio de fuerza constante y por supuesto tener tiempo de calidad para mí.
+                    </p>
+                </div>
+                
+                <!-- Habilidades -->
+                <div id="skills" class="carousel-item">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Habilidades Blandas</h2>
+                    <div class="space-y-4 mb-4">
+                        <p class="text-gray-600">
+                        Autodidacta, Resiliente, Proactivo, Trabajo en equipo, Comunicación efectiva, Resolución de problemas, Adaptabilidad, Pensamiento crítico, Creatividad.
+                    </p>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 mt-4">Habilidades Técnicas</h2>
+                    <div class="space-y-4">
+                        <!-- Laravel -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium flex items-center">
+                                    <i class="fab fa-laravel text-red-500 text-xl mr-2"></i>PHP & Laravel
+                                </span>
+                                <span class="text-sm font-medium text-blue-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-red-500 h-2.5 rounded-full transition-all duration-500" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- MySQL -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium flex items-center">
+                                    <i class="fas fa-database text-blue-500 text-xl mr-2"></i> MySQL
+                                </span>
+                                <span class="text-sm font-medium text-blue-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-500" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bootstrap -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium flex items-center">
+                                    <i class="fab fa-bootstrap text-purple-500 text-xl mr-2"></i> Bootstrap
+                                </span>
+                                <span class="text-sm font-medium text-blue-600">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-500 h-2.5 rounded-full transition-all duration-500" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tailwind -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium flex items-center">
+                                    <i class="fas fa-wind text-teal-500 text-xl mr-2"></i> Tailwind CSS
+                                </span>
+                                <span class="text-sm font-medium text-blue-600">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-teal-500 h-2.5 rounded-full transition-all duration-500" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- JavaScript -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium flex items-center">
+                                    <i class="fab fa-js-square text-yellow-500 text-xl mr-2"></i> JavaScript
+                                </span>
+                                <span class="text-sm font-medium text-blue-600">50%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-yellow-500 h-2.5 rounded-full transition-all duration-500" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- HTML -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium flex items-center">
+                                    <i class="fab fa-html5 text-orange-500 text-xl mr-2"></i> HTML
+                                </span>
+                                <span class="text-sm font-medium text-blue-600">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-orange-500 h-2.5 rounded-full transition-all duration-500" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- CSS -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium flex items-center">
+                                    <i class="fab fa-css3-alt text-blue-500 text-xl mr-2"></i> CSS
+                                </span>
+                                <span class="text-sm font-medium text-blue-600">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-500" style="width: 70%"></div>
+                            </div>
+                        </div>
+
+                         <!-- Arduino UNO -->
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium flex items-center">
+                                    <i class="fa-solid fa-robot text-xl mr-2"></i> Arduino UNO con C++
+                                </span>
+                                <span class="text-sm font-medium text-blue-600">25%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-gray-500 h-2.5 rounded-full transition-all duration-500" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experiencia -->
+                <div id="experience" class="carousel-item">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Experiencia Laboral</h2>
+                    <div class="space-y-6">
+                        <!-- Experiencia 1 -->
+                        <div class="border-l-4 border-blue-500 pl-4 transition-transform hover:translate-x-1">
+                            <h3 class="text-xl font-semibold text-gray-800">Soporte Técnico</h3>
+                            <p class="text-gray-600 font-medium">Sistemas SAE / ByC Computación | Julio 2020 - Noviembre 2020</p>
+                            <ul class="list-disc list-inside text-gray-600 mt-2 ml-4">
+                                <li>Realicé soporte técnico remoto del sistema web SAE el cual es un sistema de automatización escolar</li>
+                                <li>Realicé inducciones del uso del sistema web de manera remota y presencial a algunas instituciones que son clientes del sistema</li>
+                                <li>Fuí mano ayuda del programador para alistar las paginas webs de nuevos colegios, instituciones o clientes que contraten ya que el sistema incluye páginas web </li>
+                                <li>Notifiqué errores del sistema al departamento de programación</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Experiencia 2 -->
+                        <div class="border-l-4 border-blue-500 pl-4 transition-transform hover:translate-x-1">
+                            <h3 class="text-xl font-semibold text-gray-800">Asistente de proyectos y eventos, Asesor de Tecnología </h3>
+                            <p class="text-gray-600 font-medium">Pitágoras C.A. | Febrero 2022 - Actualmente</p>
+                            <ul class="list-disc list-inside text-gray-600 mt-2 ml-4">
+                                <li>Contribuí al desarrollo de eventos corporativos realizados por la empresa de manera logística</li>
+                                <li>Controbuí a la configuración de plataformas de ruedas de negocios los cuales son eventos pequeños de negocios realizados por la empresa</li>
+                                <li>Ofrecer soporte a las empresas de como utilizar el sistema de agendamiento en las ruedas de negocios</li>
+                                <li>Colaboré en ofrecer soporte y/o soluciones a los equipos de tecnología tangibles de la empresa (PC y laptops)</li>
+                                <li>Colaboré en ofrecer soporte a los clientes de la empresa quienes publican vacantes en el portal de empleo de la empresa (un servicio de la empresa)</li>
+                                 <li>Colaboré en indagar y explicar al equipo como se utiliza el modulo de vacantes que posee Odoo (El primer sistema que se tenía como base en el portal de vacantes)</li>
+                                 <li>Colaboré en la migración de datos del primer portal web de vacantes a uno nuevo</li>
+                                 <li>Realicé y actualicé la página web de la empresa<a class="text-blue-600" href="https://organizacionpitagoras.com/">organizacionpitagoras.com</a></li>
+                                 <li>Realicé la página web del portal de empleo que ofrece como servicio la empresa <a class="text-blue-600" href="https://www.organizacionpitagoras.com/expoempleo/">expoempleo.online</a></li>
+                                 <li>Realicé la página web del portal de eventos <a href=""></a></li>
+                                 <li>Realicé la página web del evento Anual de la Cámara de Industriales del Estado Lara organizado por Pitágoras C.A. <a class="text-blue-600" href="https://www.organizacionpitagoras.com/expocilara/">expocilara.com</a></li>
+                                 <li>Cumplí mi rol de pasante en la empresa por lo cual diseñé y desarrolle un sistema de registro de visitantes a eventos generandoles un código QR único que puede servir para que los expositores de un evento puedan escanearlos y levantar su data, además de ofrecer al administrador estadisticas de registros y a los expositores un módulo de rifa ya que las empresas tienden en estos eventos a realizar diferentes sorteos <a class="text-blue-600" href="https://eventag.organizacionpitagoras.com/login/expositor">EvenTag</a></li>
+                                 <li>Realicé soporte técnico para explicarles a las empresas expositoras de un evento la utilización del sistema implementado por mi </li>
+                                 <li>Coloqué en producción y en la web el sistema y las páginas anteriormente mencionadas mediante el hosting de la empresa</li>
+                            </ul>
+                        </div>
+                    </div>
+                 </div>
+                        
+                <!-- Educación -->
+                <div id="education" class="carousel-item">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Formación Académica</h2>
+                    <div class="space-y-6">
+                        <!-- Educación 1 -->
+                        <div class="border-l-4 border-blue-500 pl-4 transition-transform hover:translate-x-1">
+                            <h3 class="text-xl font-semibold text-gray-800">Bachiller - Técnico Medio en Informática</h3>
+                            <p class="text-gray-600 font-medium">Colegio "María Auxiliadora" - Barquisimeto | 2008 - 2020</p>
+                        </div>
+                        
+                        <!-- Educación 2 -->
+                        <div class="border-l-4 border-blue-500 pl-4 transition-transform hover:translate-x-1">
+                            <h3 class="text-xl font-semibold text-gray-800">T.S.U Informática</h3>
+                            <p class="text-gray-600 font-medium">Instituto Universitario Jesús Obrero "IUJO" extensión Barquisimeto | 2023 - Actualmente</p>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 mt-4">Algunos Cursos</h2>
+                    <div class="space-y-6">
+                        <!-- Curso 1 -->
+                        <div class="border-l-4 border-blue-500 pl-4 transition-transform hover:translate-x-1">
+                            <h3 class="text-xl font-semibold text-gray-800">Programación JAVA</h3>
+                            <p class="text-gray-600 font-medium">Instituto Universitario Jesús Obrero "IUJO" extensión Barquisimeto | 2022</p>
+                        </div>
+                        
+                                                
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.carousel-btn');
+            const items = document.querySelectorAll('.carousel-item');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    
+                    // Remover clase active de todos los botones e items
+                    buttons.forEach(btn => {
+                        btn.classList.remove('active', 'text-white', 'bg-blue-600');
+                        btn.classList.add('text-gray-700', 'bg-white', 'hover:bg-gray-300');
+                    });
+                    
+                    items.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Agregar clase active al botón clickeado y al item correspondiente
+                    this.classList.remove('text-gray-700', 'bg-white', 'hover:bg-gray-100');
+                    this.classList.add('active', 'text-white', 'bg-blue-600');
+                    
+                    document.getElementById(target).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
